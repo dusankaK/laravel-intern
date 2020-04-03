@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome', compact('name', 'age'));
 });
 
+Route::get('/{age?}', function ($age) {
+    return "You are {$age} years old.";
+})->middleware('checkAge');
+
 // Route::post('user/dashboard', function () {
 //     return 'Welcome to dashboard';
 // })->name('dashboard');
