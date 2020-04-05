@@ -81,7 +81,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Welcome {{ $name }}
+                </div>
+
+                <div>
+                    <h3>You are {{$age}} years old. </h3>
                 </div>
 
                 <div class="links">
