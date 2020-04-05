@@ -11,35 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    $name = 'Dusanka';
-    $age = 26;
-    return view('welcome', compact('name', 'age'));
-});
-
-Route::get('/greeting', function() {
-    return view('simple', ['first_name' => 'Dušanka']);
-});
-
-Route::get('/{age?}', function ($age) {
-    return "You are {$age} years old.";
-})->middleware('checkAge');
-
-
-// Route::post('user/dashboard', function () {
-//     return 'Welcome to dashboard';
-// })->name('dashboard');
-
-// Route::put('user/add', function () {
-//     return 'Make some changes';
-// })->name('add');
-
-// Route::patch('user/bla', function () {
-//     return 'Blabla';
-// })->name('bla');
-
-// Route::delete('post/example', function () {
-//     return 'Delete this post';
-// })->name('post.example');
-
-Route::resource('photo', 'PhotoController');
+Route::get('/', 'HomeController@index');
+Route::get('/greeting', 'HomeController@greeting');
+Route::get('/{age?}', 'HomeController@age')->middleware('checkAge');
+Route::get('/users/create', 'HomeController@create');
+Route::post('/user', 'HomeController@store');
+Route::put('/users/{id}', 'HomeController@update');
+Route::patch('/users/{id}', 'HomeController@update');
+Route::delete('/users/{id}', 'HomeController@destroy');
+Route::get('/users/{id}/user', 'HomeController@edit');
+//Route::resource('photo', 'PhotoController');
