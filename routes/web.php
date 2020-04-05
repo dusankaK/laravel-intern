@@ -20,4 +20,7 @@ Route::put('/users/{id}', 'HomeController@update');
 Route::patch('/users/{id}', 'HomeController@update');
 Route::delete('/users/{id}', 'HomeController@destroy');
 Route::get('/users/{id}/user', 'HomeController@edit');
-//Route::resource('photo', 'PhotoController');
+
+/* PhotoController - kreiran ranije, koršćen za ovu vežbu
+Route::resource('photo', 'PhotoController');
+*/
