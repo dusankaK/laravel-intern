@@ -22,3 +22,4 @@ use Illuminate\Http\Request;
 Route::get('/one', function () {
     return response()->json(['message' => 'success'], 200);
 });
+
