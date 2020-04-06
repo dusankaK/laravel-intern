@@ -19,6 +19,12 @@ use Illuminate\Http\Request;
 
 
 // In postman returns status code 200
-Route::get('/one', function () {
-    return response()->json(['message' => 'success'], 200);
-});
+// Route::get('/one', function () {
+//     return response()->json(['message' => 'success'], 200);
+// });
+Route::post('/login', 'Auth\LoginController@authenticate'); 
+Route::post('/open', 'DataController@open');
+
+// Bez middleware vraća string iz json, a sa middleware vraća 401
+Route::post('/close', 'DataController@close')->middleware('jwt');
+

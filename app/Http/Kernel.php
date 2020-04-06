@@ -63,6 +63,8 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         // Adding a named middleware to be applied on specific routes
         'checkAge' => \App\Http\Middleware\CheckAge::class,
+        'jwt' => \Tymon\JWTAuth\Http\Middleware\Authenticate::class,
+
     ];
 
     /**
