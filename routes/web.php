@@ -24,5 +24,6 @@
 /* PhotoController - kreiran ranije, koršćen za ovu vežbu
 Route::resource('photo', 'PhotoController');
 */
+
 Route::get('/homepage', 'HomeController@index')->name('page');
 Route::resource('/posts', 'PostController');

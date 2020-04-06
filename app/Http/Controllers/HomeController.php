@@ -3,15 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Exceptions\TestException;
+
 
 class HomeController extends Controller
 {
     //
     public function index() 
-    {
-        $name = 'Dusanka';
-        $age = 26;
-        return view('welcome', compact('name', 'age'));
+    {   
+        throw new TestException();
+        // $name = 'Dusanka';
+        // $age = 26;
+        // return view('welcome', compact('name', 'age'));
 
     }
 
