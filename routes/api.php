@@ -22,3 +22,7 @@ use Illuminate\Http\Request;
 Route::get('/one', function () {
     return response()->json(['message' => 'success'], 200);
 });
+Route::get('/posts', 'PostController@index');
+Route::get('/posts/{id}', 'PostController@show');
+Route::post('/post', 'PostController@store');
+Route::put('/posts/{id}', 'PostController@update');
